@@ -1,1 +1,1608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
 
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Happy Birthday Urelll 🤍</title>
+
+
+<style>
+
+/* =====================================================
+   DASAR
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color:#fff8f2;
+
+    background:#241510;
+}
+
+
+/* =====================================================
+   WEBSITE
+===================================================== */
+
+#app{
+
+    width:100%;
+    height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   SLIDE
+===================================================== */
+
+.slide{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        25px
+        20px
+        90px;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,255,255,.07),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(177,124,87,.13),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #241510,
+            #4b2d20,
+            #2b1914
+        );
+}
+
+
+.slide.active{
+
+    display:flex;
+
+    animation:
+        slideIn .6s ease;
+
+}
+
+
+@keyframes slideIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    width:min(
+        94vw,
+        720px
+    );
+
+    max-height:82vh;
+
+    overflow-y:auto;
+
+    padding:30px 24px;
+
+    border-radius:26px;
+
+    background:
+        rgba(64,39,28,.78);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.4);
+
+    backdrop-filter:
+        blur(8px);
+
+    text-align:center;
+
+}
+
+
+.card::-webkit-scrollbar{
+
+    width:4px;
+
+}
+
+
+.card::-webkit-scrollbar-thumb{
+
+    background:#a77b61;
+
+    border-radius:20px;
+
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+h1{
+
+    font-size:
+        clamp(
+            36px,
+            10vw,
+            65px
+        );
+
+    line-height:1.05;
+
+    margin-bottom:18px;
+
+}
+
+
+h2{
+
+    font-size:
+        clamp(
+            25px,
+            7vw,
+            42px
+        );
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+}
+
+
+p{
+
+    font-size:
+        clamp(
+            15px,
+            4vw,
+            19px
+        );
+
+    line-height:1.8;
+
+}
+
+
+.quote{
+
+    font-size:
+        clamp(
+            18px,
+            4.7vw,
+            26px
+        );
+
+    line-height:1.7;
+
+    font-style:italic;
+
+}
+
+
+.small{
+
+    margin-top:15px;
+
+    font-size:13px;
+
+    opacity:.65;
+
+}
+
+
+.heart{
+
+    font-size:70px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =====================================================
+   5 FOTO DALAM 1 SLIDE
+===================================================== */
+
+.photo-grid{
+
+    width:100%;
+
+    max-width:650px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+
+.gallery-photo{
+
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    border:
+        3px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.35);
+
+}
+
+
+/* FOTO KELIMA LEBIH BESAR */
+
+.gallery-photo:nth-child(5){
+
+    grid-column:
+        1 / 3;
+
+    height:230px;
+
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video{
+
+    width:min(
+        90vw,
+        650px
+    );
+
+    max-height:65vh;
+
+    border-radius:20px;
+
+    background:#000;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.45);
+
+}
+
+
+/* =====================================================
+   TOMBOL
+===================================================== */
+
+.nav{
+
+    position:fixed;
+
+    bottom:20px;
+
+    z-index:30;
+
+    border:none;
+
+    padding:
+        11px
+        20px;
+
+    border-radius:30px;
+
+    background:#76513d;
+
+    color:white;
+
+    font-family:Georgia,serif;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+}
+
+
+#back{
+
+    left:18px;
+
+}
+
+
+#next{
+
+    right:18px;
+
+}
+
+
+#counter{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:27px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:30;
+
+    font-size:12px;
+
+    opacity:.6;
+
+}
+
+
+/* =====================================================
+   MUSIK
+===================================================== */
+
+#musicButton{
+
+    position:fixed;
+
+    right:18px;
+
+    top:18px;
+
+    z-index:50;
+
+    width:43px;
+
+    height:43px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    background:#76513d;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+#lockScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(135,88,59,.25),
+            transparent 45%
+        ),
+
+        #21130f;
+
+}
+
+
+.lockBox{
+
+    width:min(
+        90vw,
+        400px
+    );
+
+    padding:35px 25px;
+
+    border-radius:28px;
+
+    background:#392219;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.5);
+
+    text-align:center;
+
+}
+
+
+.lockBox h1{
+
+    font-size:37px;
+
+}
+
+
+.lockBox p{
+
+    font-size:15px;
+
+}
+
+
+#password{
+
+    width:100%;
+
+    margin-top:22px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        #98715a;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:20px;
+
+    letter-spacing:7px;
+
+    color:#392219;
+
+}
+
+
+#openButton{
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#98715a;
+
+    color:white;
+
+    font-family:Georgia,serif;
+
+    font-size:16px;
+
+}
+
+
+#error{
+
+    min-height:20px;
+
+    margin-top:10px;
+
+    color:#e4aa91;
+
+    font-size:13px;
+
+}
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* =====================================================
+   HP
+===================================================== */
+
+@media(max-width:600px){
+
+    .card{
+
+        padding:
+            23px
+            18px;
+
+    }
+
+
+    .gallery-photo{
+
+        height:125px;
+
+    }
+
+
+    .gallery-photo:nth-child(5){
+
+        height:165px;
+
+    }
+
+
+    .nav{
+
+        padding:
+            10px
+            15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PASSWORD
+===================================================== -->
+
+<div id="lockScreen">
+
+    <div class="lockBox">
+
+        <div class="heart">
+            ♡
+        </div>
+
+
+        <h1>
+            For Urelll
+        </h1>
+
+
+        <p>
+            ada sesuatu kecil yang aku siapin buat kamu.
+        </p>
+
+
+        <input
+            id="password"
+            type="password"
+            inputmode="numeric"
+            maxlength="8"
+            placeholder="••••••••"
+        >
+
+
+        <button id="openButton">
+            Buka ♡
+        </button>
+
+
+        <div id="error"></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     LAGU
+===================================================== -->
+
+<audio
+    id="music"
+    loop
+>
+
+    <source
+        src="d3efda642091d5da91550c79f20daaf0.mp4"
+        type="audio/mp4"
+    >
+
+</audio>
+
+
+
+<!-- =====================================================
+     SEMUA SLIDE AKAN DIBUAT JAVASCRIPT
+===================================================== -->
+
+<div id="app"></div>
+
+
+
+<!-- =====================================================
+     NAVIGASI
+===================================================== -->
+
+<button
+    id="back"
+    class="nav hidden"
+>
+    ←
+</button>
+
+
+<button
+    id="next"
+    class="nav hidden"
+>
+    →
+</button>
+
+
+<div
+    id="counter"
+    class="hidden"
+>
+</div>
+
+
+<button
+    id="musicButton"
+    class="hidden"
+>
+    ♫
+</button>
+
+
+
+<script>
+
+
+/* =====================================================
+   FOTO
+===================================================== */
+
+const photos = [
+
+    "IMG-20251011-WA0019.jpg",
+
+    "IMG-20251031-WA0003.jpg",
+
+    "IMG-20251109-WA0024.jpg",
+
+    "IMG-20260122-WA0087.jpg",
+
+    "IMG-20260122-WA0093.jpg",
+
+    "IMG-20260122-WA0108.jpg",
+
+    "IMG-20260417-WA0056.jpg",
+
+    "IMG-20260421-WA0049.jpg",
+
+    "IMG-20260619-WA0027.jpg",
+
+    "IMG-20260619-WA0028.jpg",
+
+    "IMG-20260802-WA0095.jpg",
+
+    "IMG-20261008-WA0015.jpg",
+
+    "IMG-20261008-WA0016.jpg",
+
+    "IMG-20261008-WA0017.jpg",
+
+    "IMG-20261008-WA0018.jpg",
+
+    "IMG-20261008-WA0019.jpg",
+
+    "IMG-20261008-WA0020.jpg",
+
+    "IMG-20261008-WA0021.jpg",
+
+    "IMG-20261008-WA0022.jpg",
+
+    "IMG-20261008-WA0023.jpg"
+
+];
+
+
+
+/* =====================================================
+   UCAPAN
+===================================================== */
+
+const texts = [
+
+    `semoga di umur kamu yang ke-15 ini,
+    kamu diberikan panjang umur, kesehatan,
+    kebahagiaan dan semoga makin pinter juga.`,
+
+    `semoga semua hal baik yang kamu inginkan
+    satu persatu bisa tercapai.`,
+
+    `semoga apa pun yang sedang kamu perjuangkan
+    sekarang bisa membuahkan hasil yang baik,
+    dan semoga harapan-harapan kamu untuk masa depan
+    nanti bisa terkabul semuanya. aamiin.`,
+
+    `tetap jadi aurel yang aku kenal ya rel,
+    jangan berubah.`,
+
+    `kalau suatu hari nanti kita ada masalah,
+    inget kita dulu pernah selucu itu sampai adkel,
+    kakel, bahkan ust-ust juga nandain kalau kita
+    selalu ke mana-mana bareng.`,
+
+    `yang kalau ada salah satu dari kita pasti
+    yang lain dicariin.`,
+
+    `yang hampir setiap hari bareng,
+    cerita hal random,
+    ketawa karena hal kecil.`,
+
+    `dan bahkan mungkin orang-orang udah bosen
+    lihat kita selalu berdua wkwk.`,
+
+    `banyak banget hal kecil yang mungkin sekarang
+    kelihatan biasa aja, tapi kalau diinget lagi
+    ternyata semuanya punya tempat sendiri
+    di ingatan aku.`,
+
+    `rel, makasih banyak ya udah mau jadi temen
+    yang bener-bener temen buat aku
+    dari aku awal masuk sampai sekarang.`,
+
+    `makasih karena dulu kamu selalu ada buat aku,
+    selalu dengerin keluh kesah aku,
+    dan selalu mau nemenin aku.`,
+
+    `makasih karena selalu bantuin aku
+    lepas pasang brace,
+    selalu ngingetin aku,
+    dan selalu ngelindungin aku dari hal apa pun.`,
+
+    `dan selalu bisa bikin aku ketawa sampai aku lupa
+    kalau di hidup aku sebenarnya lagi ada banyak masalah.`,
+
+    `mungkin waktu itu aku sering nganggep semuanya
+    biasa aja karena kita terlalu sering ngelakuinnya.`,
+
+    `tapi sekarang aku sadar ternyata
+    hal-hal kecil itu berarti banget buat aku.`,
+
+    `makasih juga karena kamu pernah jadi salah satu
+    orang yang bikin aku ngerasa nggak sendirian.`,
+
+    `kamu pernah jadi tempat aku cerita tentang banyak hal,
+    bahkan hal-hal yang mungkin nggak bisa
+    aku ceritain ke orang lain.`,
+
+    `dan aku juga seneng pernah jadi tempat kamu cerita,
+    tempat kamu pulang kalau lagi capek,
+    atau sekadar tempat buat ngobrolin hal random.`,
+
+    `aku bersyukur pernah punya pertemanan
+    yang seseru itu sama kamu.`,
+
+    `tapi sayangnya sekarang kita udah nggak seseru dulu.`,
+
+    `kita udah nggak sedekat dan nggak seterbuka dulu.
+    sekarang aku nggak tau masalah kamu,
+    dan kamu juga nggak tau masalah aku.`,
+
+    `kita yang dulu hampir selalu bareng
+    sekarang jadi punya kehidupan masing-masing.`,
+
+    `kadang aku masih suka mikir,
+    kok bisa ya kita yang dulu ke mana-mana selalu berdua
+    sekarang jadi sejauh ini.`,
+
+    `tapi mungkin memang setiap pertemanan
+    punya masanya sendiri.`,
+
+    `mungkin masa pertemanan kita yang dulu
+    memang udah selesai,
+    atau mungkin cuma berubah
+    jadi sesuatu yang berbeda.`,
+
+    `aku juga nggak tau.`,
+
+    `kalau memang sekarang kamu lebih bahagia
+    dengan orang-orang yang ada di sekitar kamu,
+    aku ikut seneng.`,
+
+    `aku harap kamu ketemu banyak orang baik
+    yang bisa menghargai kamu,
+    yang bisa dengerin cerita kamu,
+    dan yang bisa nemenin kamu
+    saat kamu lagi seneng maupun lagi jatuh.`,
+
+    `maafin aku ya kalau selama ini aku banyak salah.`,
+
+    `maafin aku kalau aku pernah nggak peka
+    sama perasaan kamu,
+    pernah bikin kamu kesel,
+    atau pernah nyusahin kamu.`,
+
+    `maafin juga kalau selama kita temenan
+    aku belum bisa jadi temen yang baik.`,
+
+    `aku juga nggak mau maksa kita
+    buat balik kayak dulu,
+    karena aku tau semuanya udah berubah.`,
+
+    `aku cuma berharap meskipun sekarang kita
+    udah nggak seperti dulu,
+    semua hal baik yang pernah kita lewatin bareng
+    nggak hilang gitu aja.`,
+
+    `kalau suatu saat nanti kita ketemu
+    dan cuma bisa saling senyum
+    atau ngobrol sebentar,
+    aku harap nggak ada rasa benci
+    atau rasa nggak enak di antara kita.`,
+
+    `aku tetap bakal nganggep
+    semua kenangan kita
+    sebagai sesuatu yang berharga.`,
+
+    `langgeng terus ya kamu sama circle barumu.`,
+
+    `kalau ada masalah diselesaikan baik-baik,
+    jangan langsung buyar.`,
+
+    `semoga kalian bisa terus saling jaga
+    dan saling dukung satu sama lain.`,
+
+    `semoga kamu selalu dikelilingi orang-orang
+    yang tulus dan nggak cuma ada
+    waktu kamu lagi seneng aja.`,
+
+    `dan satu hal yang pengen aku bilang.`,
+
+    `kalau suatu hari kamu punya masalah,
+    lagi capek, lagi bingung,
+    atau cuma butuh tempat buat cerita,
+    jangan malu buat dateng lagi ke aku.`,
+
+    `meskipun kita udah nggak sedekat dulu,
+    aku tetap selalu siap kapan pun
+    buat dengerin cerita kamu.`,
+
+    `kamu nggak harus mikir kita sekarang
+    masih temenan sedeket dulu atau nggak.`,
+
+    `kalau kamu butuh aku,
+    aku bakal tetep berusaha ada.`,
+
+    `semoga di umur 15 ini kamu bisa lebih bahagia,
+    lebih banyak ketemu hal-hal baik,
+    lebih sayang sama diri kamu sendiri,
+    dan bisa jadi versi aurel yang kamu mau.`,
+
+    `jangan terlalu keras sama diri sendiri ya rel.`,
+
+    `kalau suatu saat semuanya terasa berat,
+    inget kalau kamu udah berhasil melewati
+    banyak hal sampai sejauh ini.`,
+
+    `semoga semua doa baik yang orang-orang kasih
+    ke kamu hari ini bener-bener bisa
+    satu persatu jadi nyata.`,
+
+    `semoga tahun ini jadi tahun yang lebih baik buat kamu,
+    lebih banyak senyumnya,
+    lebih sedikit sedihnya,
+    dan semoga kamu selalu punya alasan buat bahagia.`,
+
+    `makasih ya rel, untuk semuanya.`,
+
+    `makasih udah pernah jadi rumah
+    di salah satu bagian hidup aku.`,
+
+    `dan makasih karena pernah jadi aurel
+    yang selalu ada di samping aku.`
+
+];
+
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+const app =
+    document.getElementById("app");
+
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+app.innerHTML += `
+
+<section class="slide active">
+
+    <div class="card">
+
+        <div class="heart">
+            ♡
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            Urelll
+        </h1>
+
+        <p class="quote">
+            happy 15th birthday, urelll 🤍
+        </p>
+
+        <p class="small">
+            geser pelan-pelan ya...
+        </p>
+
+    </div>
+
+</section>
+
+`;
+
+
+
+/* =====================================================
+   FOTO 5-5-5-5
+===================================================== */
+
+for(
+    let i = 0;
+    i < photos.length;
+    i += 5
+){
+
+    let gallery = "";
+
+
+    for(
+        let j = i;
+        j < i + 5 && j < photos.length;
+        j++
+    ){
+
+        gallery += `
+
+            <img
+                class="gallery-photo"
+                src="${photos[j]}"
+                alt="Memory Urelll"
+            >
+
+        `;
+
+    }
+
+
+    app.innerHTML += `
+
+    <section class="slide">
+
+        <div class="card">
+
+            <div class="photo-grid">
+
+                ${gallery}
+
+            </div>
+
+            <p class="small">
+                some memories 🤍
+            </p>
+
+        </div>
+
+    </section>
+
+    `;
+
+
+    /* =================================================
+       UCAPAN SETELAH SETIAP 5 FOTO
+    ================================================= */
+
+    const textStart =
+        Math.floor(i / 5) * 5;
+
+
+    for(
+        let t = textStart;
+        t < textStart + 5 &&
+        t < texts.length;
+        t++
+    ){
+
+        app.innerHTML += `
+
+        <section class="slide">
+
+            <div class="card">
+
+                <p>
+                    ${texts[t]}
+                </p>
+
+            </div>
+
+        </section>
+
+        `;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+app.innerHTML += `
+
+<section class="slide">
+
+    <div class="card">
+
+        <h2>
+            one more memory.
+        </h2>
+
+        <video
+            class="video"
+            controls
+            playsinline
+        >
+
+            <source
+                src="VID-20261007-WA0032(1).mp4"
+                type="video/mp4"
+            >
+
+            video tidak dapat diputar.
+
+        </video>
+
+    </div>
+
+</section>
+
+`;
+
+
+
+/* =====================================================
+   PENUTUP
+===================================================== */
+
+app.innerHTML += `
+
+<section class="slide">
+
+    <div class="card">
+
+        <div class="heart">
+            ♡
+        </div>
+
+        <h1>
+            Happy 15th<br>
+            Birthday, Urelll 🤍
+        </h1>
+
+        <p class="quote">
+
+            semoga kamu selalu bahagia,
+            walaupun mungkin nantinya
+            bukan lagi bareng aku.
+
+        </p>
+
+        <p class="small">
+            makasih untuk semuanya.
+        </p>
+
+    </div>
+
+</section>
+
+`;
+
+
+
+/* =====================================================
+   SLIDE SYSTEM
+===================================================== */
+
+const slides =
+    document.querySelectorAll(".slide");
+
+
+let current =
+    0;
+
+
+const next =
+    document.getElementById("next");
+
+
+const back =
+    document.getElementById("back");
+
+
+const counter =
+    document.getElementById("counter");
+
+
+
+function showSlide(index){
+
+    slides.forEach(
+        (slide,i)=>{
+
+            slide.classList.toggle(
+                "active",
+                i === index
+            );
+
+        }
+    );
+
+
+    counter.textContent =
+        `${index + 1} / ${slides.length}`;
+
+
+    back.style.visibility =
+        index === 0
+        ? "hidden"
+        : "visible";
+
+
+    next.textContent =
+        index === slides.length - 1
+        ? "↻"
+        : "→";
+
+}
+
+
+
+showSlide(0);
+
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+next.addEventListener(
+    "click",
+    ()=>{
+
+        if(
+            current <
+            slides.length - 1
+        ){
+
+            current++;
+
+        }else{
+
+            current = 0;
+
+        }
+
+
+        showSlide(current);
+
+    }
+);
+
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+back.addEventListener(
+    "click",
+    ()=>{
+
+        if(current > 0){
+
+            current--;
+
+            showSlide(current);
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+const correctCode =
+    "11102011";
+
+
+const lockScreen =
+    document.getElementById("lockScreen");
+
+
+const password =
+    document.getElementById("password");
+
+
+const openButton =
+    document.getElementById("openButton");
+
+
+const error =
+    document.getElementById("error");
+
+
+const music =
+    document.getElementById("music");
+
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+let musicPlaying =
+    false;
+
+
+
+function openWebsite(){
+
+    lockScreen.classList.add(
+        "hidden"
+    );
+
+
+    next.classList.remove(
+        "hidden"
+    );
+
+
+    back.classList.remove(
+        "hidden"
+    );
+
+
+    counter.classList.remove(
+        "hidden"
+    );
+
+
+    musicButton.classList.remove(
+        "hidden"
+    );
+
+
+    showSlide(0);
+
+
+    music.play()
+    .then(()=>{
+
+        musicPlaying = true;
+
+        musicButton.textContent =
+            "♫";
+
+    })
+    .catch(()=>{
+
+        musicPlaying = false;
+
+        musicButton.textContent =
+            "🔇";
+
+    });
+
+}
+
+
+
+openButton.addEventListener(
+    "click",
+    ()=>{
+
+        if(
+            password.value ===
+            correctCode
+        ){
+
+            error.textContent = "";
+
+            openWebsite();
+
+        }else{
+
+            error.textContent =
+                "kode belum benar, coba lagi ya ♡";
+
+            password.value = "";
+
+            password.focus();
+
+        }
+
+    }
+);
+
+
+
+password.addEventListener(
+    "keydown",
+    event=>{
+
+        if(
+            event.key === "Enter"
+        ){
+
+            openButton.click();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   MUSIK
+===================================================== */
+
+musicButton.addEventListener(
+    "click",
+    ()=>{
+
+        if(musicPlaying){
+
+            music.pause();
+
+            musicPlaying = false;
+
+            musicButton.textContent =
+                "🔇";
+
+        }else{
+
+            music.play();
+
+            musicPlaying = true;
+
+            musicButton.textContent =
+                "♫";
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   KEYBOARD
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    event=>{
+
+        if(
+            lockScreen.classList.contains(
+                "hidden"
+            )
+        ){
+
+            if(
+                event.key ===
+                "ArrowRight"
+            ){
+
+                next.click();
+
+            }
+
+
+            if(
+                event.key ===
+                "ArrowLeft"
+            ){
+
+                back.click();
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   SWIPE HP
+===================================================== */
+
+let startX = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    event=>{
+
+        startX =
+            event.touches[0].clientX;
+
+    }
+);
+
+
+document.addEventListener(
+    "touchend",
+    event=>{
+
+        if(
+            !lockScreen.classList.contains(
+                "hidden"
+            )
+        ){
+
+            return;
+
+        }
+
+
+        const endX =
+            event.changedTouches[0].clientX;
+
+
+        const distance =
+            endX - startX;
+
+
+        if(
+            Math.abs(distance) > 50
+        ){
+
+            if(distance < 0){
+
+                next.click();
+
+            }else{
+
+                back.click();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+  </html>
